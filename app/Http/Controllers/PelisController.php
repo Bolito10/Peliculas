@@ -20,21 +20,28 @@ class PelisController extends Controller
     public function store(Request $request){
         $pelicula = new Pelicula();
 
-        $request->Categoria;
+        if ($request->hasFile('Imagen')) {
+            $imagen = $request->file('Imagen');
+            $nombreimagen = time() . '_' . $imagen->getClientOriginalName();
+            $ruta = $imagen->storeAs('public/images/peliculas', $nombreimagen);
 
-
-        $pelicula->titulo = $request->peliculanombre;
-        $pelicula->duracion = $request->Duracion;
-        $pelicula->sinopsis = $request->sinopsis;
-        $pelicula->imagen = $request->Imagen;
-        $pelicula->id_categoria = $request->Categoria;
-        $pelicula->id_director = $request->Director;
+                $pelicula->titulo = $request->peliculanombre;
+            $pelicula->duracion = $request->Duracion;
+            $pelicula->sinopsis = $request->sinopsis;
+            $pelicula->imagen = $nombreimagen;
+            $pelicula->id_categoria = $request->Categoria;
+            $pelicula->id_director = $request->Director;
 
         $pelicula->save();
 
         return redirect()->route('home');
+        
+
+
+        
 
 
     }
     
+}
 }
