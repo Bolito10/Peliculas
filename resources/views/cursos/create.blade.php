@@ -9,7 +9,7 @@
     <div class="bg-white p-8 rounded shadow-md w-96">
         <h2 class="text-2xl font-bold mb-6">Agregar Pelicula</h2>
         <div>
-            <form class="w-full max-w-sm" action="{{route('peliculas.store')}}" method="POST">
+            <form class="w-full max-w-sm" action="{{route('peliculas.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
@@ -56,7 +56,7 @@
                     <div class="md:w-2/3">
                         <input
                             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                            name="Imagen" type="text">
+                            name="Imagen" type="file">
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-2">

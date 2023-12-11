@@ -16,7 +16,10 @@ use App\Http\Controllers\PelisController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//ruta buena para movil
+Route::get('api', [HomeController::class, 'indexapi']);
 
 Route::get('peliculas', [PelisController::class, 'index'])->name('peliculas.index');
 

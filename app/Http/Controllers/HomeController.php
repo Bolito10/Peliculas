@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         $pelicula = Pelicula::all();
         $director = Directore::all();
@@ -17,8 +17,14 @@ class HomeController extends Controller
 
         $peliculasConRelaciones = Pelicula::with(['director','categoria'])->get();
 
-
-        
         return view('home', compact('peliculasConRelaciones'));
+        
+    }
+    public function indexapi()
+    {
+        
+        $peliculasConRelaciones = Pelicula::with(['director','categoria'])->get();
+        return response()->json($peliculasConRelaciones);
+        
     }
 }
