@@ -68,7 +68,7 @@
                       <div class="relative">
                         <select name="Director" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" >
                           @foreach ($director as $dire)
-                                <option>{{$dire->Director}}</option>
+                          <option value="{{$dire->IDDirector}}">{{$dire->Director}}</option>
                           @endforeach
                             
                           
@@ -85,7 +85,7 @@
                         <div class="relative">
                           <select name="Categoria" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" >
                             @foreach ($Categoria as $category)
-                                <option>{{$category->Categoria}}</option>
+                                <option value="{{$category->id_categoria}}">{{$category->Categoria}}</option>
                           @endforeach
                             
                           </select>

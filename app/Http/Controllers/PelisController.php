@@ -32,6 +32,8 @@ class PelisController extends Controller
 
         $pelicula->save();
 
+        return redirect()->route('/');
+
 
     }
     
