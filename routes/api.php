@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('peliculas', [PelisController::class, 'index'])->name('peliculas.index');
+
+Route::get('peliculas/create', [PelisController::class, 'create'])->name('peliculas.create');
