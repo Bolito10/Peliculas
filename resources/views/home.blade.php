@@ -9,7 +9,7 @@
     @foreach ($peliculasConRelaciones as $peli)
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2 mb-4">
             <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{{ asset('images/peliculas/'.$peli->imagen) }}" alt="{{ $peli->titulo }}">
+                <img class="w-full" src="{{ asset('storage/images/peliculas/'.$peli->imagen) }}" alt="{{ $peli->titulo }}">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">{{ $peli->titulo }}</div>
                     <p class="text-gray-700 text-base">

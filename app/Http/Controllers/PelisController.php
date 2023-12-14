@@ -25,6 +25,7 @@ class PelisController extends Controller
             $nombreimagen = time() . '_' . $imagen->getClientOriginalName();
             $ruta = $imagen->storeAs('public/images/peliculas', $nombreimagen);
 
+
                 $pelicula->titulo = $request->peliculanombre;
             $pelicula->duracion = $request->Duracion;
             $pelicula->sinopsis = $request->sinopsis;
@@ -35,12 +36,7 @@ class PelisController extends Controller
         $pelicula->save();
 
         return redirect()->route('home');
-        
-
-
-        
-
-
+    
     }
     
 }
